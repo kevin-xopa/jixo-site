@@ -8,7 +8,7 @@
             <!-- Brand -->
             <v-col cols="12" md="4" class="mb-8 mb-md-0">
               <div class="mb-4">
-                <img src="/logo-jixo-light.png" alt="Jixo" class="footer-logo" />
+                <img :src="logoSrc" alt="Jixo" class="footer-logo" />
               </div>
               <p class="text-body-2 text-on-primary mb-4" style="opacity: 0.7; max-width: 300px;">
                 Sistema integral de gestión para distribuidores y comercializadores.
@@ -110,7 +110,13 @@
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig()
 const currentYear = new Date().getFullYear()
+
+const logoSrc = computed(() => {
+  const base = config.app.baseURL || '/'
+  return `${base}logo-jixo-light.png`
+})
 
 const productLinks = [
   { id: 'funcionalidades', label: 'Funcionalidades' },

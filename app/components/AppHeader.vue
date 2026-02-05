@@ -73,13 +73,16 @@
 import { useTheme } from 'vuetify'
 
 const theme = useTheme()
+const config = useRuntimeConfig()
 const drawer = ref(false)
 const scrolled = ref(false)
 
 const logoSrc = computed(() => {
-  return theme.global.current.value.dark
-    ? '/logo-jixo-light.png'
-    : '/logo-jixo-dark.png'
+  const base = config.app.baseURL || '/'
+  const logo = theme.global.current.value.dark
+    ? 'logo-jixo-light.png'
+    : 'logo-jixo-dark.png'
+  return `${base}${logo}`
 })
 
 const navItems = [
