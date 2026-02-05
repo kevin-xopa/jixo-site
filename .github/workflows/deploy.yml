@@ -33,6 +33,8 @@ jobs:
 
       - name: Generate static site
         run: npm run generate
+        env:
+          NUXT_APP_BASE_URL: /${{ github.event.repository.name }}/
 
       - name: Create 404.html for SPA routing
         run: cp .output/public/index.html .output/public/404.html || true
