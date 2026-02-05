@@ -6,7 +6,7 @@
           <v-row align="center">
             <v-col cols="12" md="5" class="text-center text-md-start mb-8 mb-md-0">
               <div :class="{ 'animate-slide-in-left': isVisible }">
-                <v-chip color="on-secondary" variant="flat" class="mb-4 text-secondary">
+                <v-chip color="on-primary" variant="flat" class="mb-4 text-secondary">
                   <v-icon start size="small">mdi-rocket-launch</v-icon>
                   Empezar
                 </v-chip>
