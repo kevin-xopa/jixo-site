@@ -5,10 +5,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  // GitHub Pages - Static Site Generation
+  // GitHub Pages - SPA mode (no SSR/prerender)
   ssr: false,
   nitro: {
-    preset: 'github-pages',
+    prerender: {
+      routes: [],
+      crawlLinks: false,
+    },
   },
 
   build: {
