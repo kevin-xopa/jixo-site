@@ -3,137 +3,120 @@
     <v-container>
       <v-row justify="center">
         <v-col cols="12" lg="10">
-          <v-row align="center">
-            <v-col cols="12" md="5" class="text-center text-md-start mb-8 mb-md-0">
-              <div :class="{ 'animate-slide-in-left': isVisible }">
-                <v-chip color="on-primary" variant="flat" class="mb-4 text-secondary">
+          <div class="contact-wrapper" :class="{ 'animate-scale-in': isVisible }">
+            <!-- Left side - decorative -->
+            <div class="contact-left">
+              <div class="contact-left-content">
+                <v-chip color="primary" variant="flat" class="mb-4">
                   <v-icon start size="small">mdi-rocket-launch</v-icon>
                   Empezar
                 </v-chip>
 
-                <h2 class="text-h3 text-md-h2 font-weight-bold text-on-secondary mb-4">
+                <h2 class="contact-title">
                   ¿Listo para optimizar tu operación?
                 </h2>
-                <p class="text-body-1 text-on-secondary mb-8" style="opacity: 0.85;">
+                <p class="contact-subtitle">
                   Agenda una demo personalizada y descubre cómo Jixo puede transformar
                   la gestión de tu negocio.
                 </p>
 
-                <div class="contact-cards">
-                  <div
-                    class="contact-card"
-                    :class="{ 'animate-fade-up': isVisible }"
-                    style="animation-delay: 0.2s;"
-                  >
-                    <div class="contact-card-icon">
-                      <v-icon color="secondary" size="24">mdi-email</v-icon>
-                    </div>
-                    <div class="contact-card-content">
-                      <span class="contact-card-label">Email</span>
-                      <a href="mailto:contacto@jixo.com" class="contact-card-value">
-                        contacto@jixo.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div
-                    class="contact-card"
-                    :class="{ 'animate-fade-up': isVisible }"
-                    style="animation-delay: 0.3s;"
-                  >
-                    <div class="contact-card-icon">
-                      <v-icon color="success" size="24">mdi-whatsapp</v-icon>
-                    </div>
-                    <div class="contact-card-content">
-                      <span class="contact-card-label">WhatsApp</span>
-                      <a href="https://wa.me/521234567890" target="_blank" class="contact-card-value">
-                        +52 (123) 456-7890
-                      </a>
-                    </div>
-                  </div>
+                <div class="contact-info">
+                  <a href="mailto:contacto@jixo.com" class="contact-link">
+                    <v-icon size="20">mdi-email-outline</v-icon>
+                    <span>contacto@jixo.com</span>
+                  </a>
+                  <a href="https://wa.me/522491794353" target="_blank" class="contact-link contact-link--whatsapp">
+                    <v-icon size="20">mdi-whatsapp</v-icon>
+                    <span>+52 (249) 179-4353</span>
+                  </a>
                 </div>
               </div>
-            </v-col>
 
-            <v-col cols="12" md="7">
-              <div
-                class="form-card"
-                :class="{ 'animate-slide-in-right': isVisible }"
-              >
-                <!-- Puzzle decorations -->
-                <div class="form-puzzle form-puzzle--1"></div>
-                <div class="form-puzzle form-puzzle--2"></div>
+              <!-- Decorative puzzle shapes -->
+              <div class="puzzle-deco puzzle-deco--1"></div>
+              <div class="puzzle-deco puzzle-deco--2"></div>
+              <div class="puzzle-deco puzzle-deco--3"></div>
+            </div>
 
+            <!-- Right side - form -->
+            <div class="contact-right">
+              <div class="form-header">
                 <h3 class="form-title">Solicitar Demo</h3>
-                <p class="form-subtitle">Completa el formulario y te contactaremos pronto</p>
+                <p class="form-subtitle">Te contactaremos en menos de 24 horas</p>
+              </div>
 
-                <v-form ref="formRef" v-model="formValid" @submit.prevent="submitForm">
-                  <div class="form-grid">
-                    <v-text-field
-                      v-model="form.nombre"
-                      label="Nombre"
-                      variant="outlined"
-                      density="comfortable"
-                      prepend-inner-icon="mdi-account"
-                      :rules="[rules.required]"
-                    />
-                    <v-text-field
-                      v-model="form.empresa"
-                      label="Empresa"
-                      variant="outlined"
-                      density="comfortable"
-                      prepend-inner-icon="mdi-domain"
-                      :rules="[rules.required]"
-                    />
-                    <v-text-field
-                      v-model="form.email"
-                      label="Email"
-                      type="email"
-                      variant="outlined"
-                      density="comfortable"
-                      prepend-inner-icon="mdi-email"
-                      :rules="[rules.required, rules.email]"
-                    />
-                    <v-text-field
-                      v-model="form.telefono"
-                      label="Teléfono"
-                      variant="outlined"
-                      density="comfortable"
-                      prepend-inner-icon="mdi-phone"
-                      :rules="[rules.required]"
-                    />
-                  </div>
-
-                  <v-textarea
-                    v-model="form.mensaje"
-                    label="Mensaje (opcional)"
+              <v-form ref="formRef" v-model="formValid" @submit.prevent="submitForm">
+                <div class="form-grid">
+                  <v-text-field
+                    v-model="form.nombre"
+                    label="Nombre"
                     variant="outlined"
                     density="comfortable"
-                    prepend-inner-icon="mdi-message-text"
-                    rows="3"
-                    auto-grow
-                    class="mb-4"
-                  />
-
-                  <v-btn
-                    type="submit"
+                    prepend-inner-icon="mdi-account"
+                    :rules="[rules.required]"
                     color="primary"
-                    size="large"
-                    block
-                    :loading="loading"
-                    :disabled="!formValid"
-                  >
-                    <v-icon start>mdi-send</v-icon>
-                    Enviar solicitud
-                  </v-btn>
-                </v-form>
+                  />
+                  <v-text-field
+                    v-model="form.empresa"
+                    label="Empresa"
+                    variant="outlined"
+                    density="comfortable"
+                    prepend-inner-icon="mdi-domain"
+                    :rules="[rules.required]"
+                    color="primary"
+                  />
+                  <v-text-field
+                    v-model="form.email"
+                    label="Email"
+                    type="email"
+                    variant="outlined"
+                    density="comfortable"
+                    prepend-inner-icon="mdi-email"
+                    :rules="[rules.required, rules.email]"
+                    color="primary"
+                  />
+                  <v-text-field
+                    v-model="form.telefono"
+                    label="Teléfono"
+                    variant="outlined"
+                    density="comfortable"
+                    prepend-inner-icon="mdi-phone"
+                    :rules="[rules.required]"
+                    color="primary"
+                  />
+                </div>
 
-                <v-snackbar v-model="snackbar" :color="snackbarColor" timeout="5000">
-                  {{ snackbarText }}
-                </v-snackbar>
-              </div>
-            </v-col>
-          </v-row>
+                <v-textarea
+                  v-model="form.mensaje"
+                  label="¿En qué podemos ayudarte?"
+                  variant="outlined"
+                  density="comfortable"
+                  prepend-inner-icon="mdi-message-text"
+                  rows="3"
+                  auto-grow
+                  class="mb-4"
+                  color="primary"
+                />
+
+                <v-btn
+                  type="submit"
+                  color="primary"
+                  size="large"
+                  block
+                  :loading="loading"
+                  :disabled="!formValid"
+                  class="submit-btn"
+                >
+                  <v-icon start>mdi-send</v-icon>
+                  Enviar solicitud
+                </v-btn>
+              </v-form>
+
+              <v-snackbar v-model="snackbar" :color="snackbarColor" timeout="5000">
+                {{ snackbarText }}
+              </v-snackbar>
+            </div>
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -190,74 +173,121 @@ const submitForm = async () => {
 
 <style scoped>
 .contact-section {
-  background: rgb(var(--v-theme-secondary));
+  background: rgb(var(--v-theme-surface-variant));
 }
 
-/* Contact cards */
-.contact-cards {
+.contact-wrapper {
+  display: flex;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+}
+
+/* Left side */
+.contact-left {
+  position: relative;
+  flex: 0 0 42%;
+  background: rgb(var(--v-theme-primary));
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contact-left-content {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: rgb(var(--v-theme-on-primary));
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  color: rgb(var(--v-theme-on-primary));
+  opacity: 0.85;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.contact-info {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.contact-card {
-  display: flex;
+.contact-link {
+  display: inline-flex;
   align-items: center;
-  gap: 14px;
-  padding: 16px 20px;
-  background: rgba(var(--v-theme-on-secondary), 0.1);
-  border-radius: 14px;
-  opacity: 0;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(var(--v-theme-on-primary), 0.1);
+  border-radius: 12px;
+  color: rgb(var(--v-theme-on-primary));
+  text-decoration: none;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
-.contact-card:hover {
-  background: rgba(var(--v-theme-on-secondary), 0.15);
+.contact-link:hover {
+  background: rgba(var(--v-theme-on-primary), 0.2);
   transform: translateX(4px);
 }
 
-.contact-card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+.contact-link--whatsapp:hover {
+  background: rgba(37, 211, 102, 0.3);
+}
+
+/* Puzzle decorations */
+.puzzle-deco {
+  position: absolute;
+  pointer-events: none;
+}
+
+.puzzle-deco--1 {
+  top: -40px;
+  right: -40px;
+  width: 150px;
+  height: 150px;
+  background: rgba(var(--v-theme-on-primary), 0.08);
+  border-radius: 30px 30px 30px 60px;
+}
+
+.puzzle-deco--2 {
+  bottom: -30px;
+  left: -30px;
+  width: 120px;
+  height: 120px;
+  background: rgba(var(--v-theme-on-primary), 0.06);
+  border-radius: 60px 30px 30px 30px;
+}
+
+.puzzle-deco--3 {
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 80px;
+  background: rgba(var(--v-theme-on-primary), 0.1);
+  border-radius: 20px 0 0 20px;
+}
+
+/* Right side */
+.contact-right {
+  flex: 1;
   background: rgb(var(--v-theme-surface));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  padding: 48px 40px;
 }
 
-.contact-card-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-card-label {
-  font-size: 0.75rem;
-  color: rgba(var(--v-theme-on-secondary), 0.7);
-}
-
-.contact-card-value {
-  font-size: 1rem;
-  font-weight: 600;
-  color: rgb(var(--v-theme-on-secondary));
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-
-.contact-card-value:hover {
-  opacity: 0.8;
-}
-
-/* Form card */
-.form-card {
-  position: relative;
-  padding: 32px;
-  background: rgb(var(--v-theme-surface));
-  border-radius: 24px;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
-  opacity: 0;
-  overflow: hidden;
+.form-header {
+  margin-bottom: 28px;
 }
 
 .form-title {
@@ -265,16 +295,11 @@ const submitForm = async () => {
   font-weight: 700;
   color: rgb(var(--v-theme-on-surface));
   margin-bottom: 4px;
-  position: relative;
-  z-index: 2;
 }
 
 .form-subtitle {
   font-size: 0.9rem;
   color: rgb(var(--v-theme-outline));
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 2;
 }
 
 .form-grid {
@@ -284,85 +309,52 @@ const submitForm = async () => {
   margin-bottom: 16px;
 }
 
-@media (max-width: 600px) {
+.submit-btn {
+  margin-top: 8px;
+}
+
+/* Mobile responsive */
+@media (max-width: 960px) {
+  .contact-wrapper {
+    flex-direction: column;
+    border-radius: 24px;
+  }
+
+  .contact-left {
+    flex: none;
+    padding: 40px 32px;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-right {
+    padding: 32px;
+  }
+
   .form-grid {
     grid-template-columns: 1fr;
   }
 
-  .form-card {
-    padding: 24px;
+  .puzzle-deco--3 {
+    display: none;
   }
-}
-
-/* Puzzle decorations */
-.form-puzzle {
-  position: absolute;
-  pointer-events: none;
-}
-
-.form-puzzle--1 {
-  top: -30px;
-  right: -30px;
-  width: 100px;
-  height: 100px;
-  background: rgb(var(--v-theme-primary));
-  border-radius: 24px 24px 24px 50px;
-  opacity: 0.06;
-}
-
-.form-puzzle--2 {
-  bottom: -20px;
-  left: -20px;
-  width: 70px;
-  height: 70px;
-  background: rgb(var(--v-theme-secondary));
-  border-radius: 50px 24px 24px 24px;
-  opacity: 0.06;
 }
 
 /* Animations */
-.animate-slide-in-left {
-  animation: slideInLeft 0.7s ease-out forwards;
+.animate-scale-in {
+  animation: scaleIn 0.7s ease-out forwards;
 }
 
-.animate-slide-in-right {
-  animation: slideInRight 0.7s ease-out forwards;
-}
-
-.animate-fade-up {
-  animation: fadeUp 0.5s ease-out forwards;
-}
-
-@keyframes slideInLeft {
+@keyframes scaleIn {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: scale(0.95) translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: scale(1) translateY(0);
   }
 }
 </style>

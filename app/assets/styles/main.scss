@@ -3,11 +3,12 @@
 // main.scss
 $heading-font: 'DM Sans', sans-serif;
 $body-font: 'Manrope', sans-serif;
-
-@use 'vuetify' with ($heading-font-family: $heading-font,
+ 
+@use 'vuetify' with (
+  $heading-font-family: $heading-font,
   $body-font-family: $body-font,
-  $font-size-root: 15px);
-
+  $font-size-root: 15px
+);
 // Custom scrollbar
 ::-webkit-scrollbar {
   width: 8px;

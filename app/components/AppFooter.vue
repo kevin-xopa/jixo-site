@@ -71,15 +71,15 @@
                   <v-icon color="on-primary" size="20" class="mr-3" style="opacity: 0.7">
                     mdi-phone
                   </v-icon>
-                  <a href="tel:+521234567890" class="footer-link">
-                    +52 (123) 456-7890
+                  <a href="tel:+522491794353" class="footer-link">
+                    +52 (249) 179-4353
                   </a>
                 </div>
                 <div class="d-flex align-center">
                   <v-icon color="on-primary" size="20" class="mr-3" style="opacity: 0.7">
                     mdi-whatsapp
                   </v-icon>
-                  <a href="https://wa.me/521234567890" target="_blank" class="footer-link">
+                  <a href="https://wa.me/522491794353" target="_blank" class="footer-link">
                     WhatsApp
                   </a>
                 </div>
