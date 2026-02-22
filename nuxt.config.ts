@@ -1,29 +1,29 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
-  compatibilityDate: "2025-07-15",
+  compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
   // GitHub Pages - SPA mode (no SSR/prerender)
   ssr: false,
   nitro: {
-    preset: "github-pages",
     prerender: {
+      routes: [],
       crawlLinks: false,
     },
   },
 
   build: {
-    transpile: ["vuetify"],
+    transpile: ['vuetify'],
   },
 
   modules: [
     (_options, nuxt) => {
-      nuxt.hooks.hook("vite:extendConfig", (config) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }));
-      });
+        config.plugins.push(vuetify({ autoImport: true }))
+      })
     },
   ],
 
@@ -35,24 +35,24 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["~/assets/styles/main.scss"],
+  css: ['~/assets/styles/main.scss'],
 
   app: {
-    baseURL: "/",
-    buildAssetsDir: "assets",
+    baseURL: '/',
     head: {
-      title: "Jixo - Control total de tu operación comercial",
+      title: 'Jixo - Control total de tu operación comercial',
       meta: [
-        { charset: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
-          name: "description",
-          content:
-            "Sistema integral de gestión para distribuidores y comercializadores. Unifica ventas, inventario, compras, facturación y análisis en un solo lugar.",
+          name: 'description',
+          content: 'Sistema integral de gestión para distribuidores y comercializadores. Unifica ventas, inventario, compras, facturación y análisis en un solo lugar.'
         },
-        { name: "theme-color", content: "#6366f1" },
+        { name: 'theme-color', content: '#6366f1' },
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
     },
   },
-});
+})
