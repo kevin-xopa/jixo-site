@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   css: ['~/assets/styles/main.scss'],
 
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/',
+    baseURL: '/',
     head: {
       title: 'Jixo - Control total de tu operación comercial',
       meta: [
